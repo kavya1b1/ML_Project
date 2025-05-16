@@ -35,3 +35,6 @@ except Exception as e:
 //[100 rows x 5 columns]
 
 type(iris_data)
+//pandas.core.frame.DataFrame
+
+iris_data.iloc[50:100]
