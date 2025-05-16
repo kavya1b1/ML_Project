@@ -33,3 +33,5 @@ except Exception as e:
 //99           5.7          2.8           4.1          1.3  Iris-versicolor
 
 //[100 rows x 5 columns]
+
+type(iris_data)
