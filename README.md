@@ -37,7 +37,7 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report, accuracy_score
-
+```
 
 🚀 Next Steps
 Perform Exploratory Data Analysis (EDA)
