@@ -15,7 +15,7 @@ This project uses the Iris dataset to train a K-Nearest Neighbors (KNN) classifi
 The dataset is loaded directly from the UCI Machine Learning Repository:  
 🔗 [https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data](https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data)
 
-## 📊 Features in the Dataset
+## 📊 Features in the Dataset.
 
 Each instance includes:
 
