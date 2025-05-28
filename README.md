@@ -8,7 +8,7 @@ This project uses the Iris dataset to train a K-Nearest Neighbors (KNN) classifi
 - numpy
 - matplotlib
 - seaborn
-- scikit-learn
+- scikit-learn  
 
 ## 📁 Dataset Source
 
