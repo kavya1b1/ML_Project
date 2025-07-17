@@ -1,6 +1,13 @@
+#1st block of code 
 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 df= pd.read_csv("/bin/titanic 2.csv")
+
+#2nd block of code 
+
+df.head()           # View first 5 rows
+df.info()           # Data types & non-null counts
+df.describe()       # Statistical summary of numerical features
