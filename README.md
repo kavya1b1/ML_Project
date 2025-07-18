@@ -13,3 +13,29 @@ Showcase my ability to build, evaluate, and interpret ML models.
 Continuously learn and experiment with new techniques and algorithms.
 
 Each project directory includes its own README.md with detailed explanations of the problem, data, methodology, results, and insights.
+
+
+🛠️ Key Technologies that are going to be Used
+Python
+
+Jupyter Notebooks / Google Colab
+
+Pandas
+
+NumPy
+
+Scikit-learn
+
+Matplotlib
+
+Seaborn
+
+TensorFlow / Keras (for Deep Learning projects)
+
+PyTorch (for Deep Learning projects, alternative)
+
+Surprise / LightFM (for Recommendation Systems)
+
+FastAPI / Flask (for MLOps projects)
+
+Git & GitHub
