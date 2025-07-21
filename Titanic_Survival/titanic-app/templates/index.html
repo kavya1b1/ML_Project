@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Titanic Survival Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h2>Predict Titanic Survival</h2>
+  <form id="predictForm">
+    <label>
+      Class:
+      <input type="number" id="pclass" required>
+    </label><br>
+
+    <label>
+      Age:
+      <input type="number" id="age" required>
+    </label><br>
+
+    <label>
+      Siblings/Spouses:
+      <input type="number" id="sibsp" required>
+    </label><br>
+
+    <label>
+      Parents/Children:
+      <input type="number" id="parch" required>
+    </label><br>
+
+    <label>
+      Fare:
+      <input type="number" id="fare" required>
+    </label><br>
+
+    <label>
+      Sex:
+      <select id="sex">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </label><br>
+
+    <label>
+      Embarked:
+      <select id="embarked">
+        <option value="S">Southampton</option>
+        <option value="Q">Queenstown</option>
+        <option value="C">Cherbourg</option>
+      </select>
+    </label><br>
+
+    <button type="submit">Predict</button>
+  </form>
+
+  <h3 id="result"></h3>
+
+  <div id="chartContainer" style="display: none; text-align: center; margin-top: 20px;">
+    <h4>Prediction Breakdown</h4>
+    <canvas id="chart" width="300" height="300" style="margin: auto;"></canvas>
+  </div>
+
+  <script src="{{ url_for('static', filename='predict.js') }}"></script>
+</body>
+</html>
