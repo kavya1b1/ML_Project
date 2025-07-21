@@ -1,0 +1,102 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report, accuracy_score
+
+# Define the URL and column names
+url  = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+column_names = ["sepal_length", "sepal_width", "petal_length", "petal_width", "class"]
+
+# Try to load the dataset
+try:
+    iris_data = pd.read_csv(url, names=column_names)
+    print("Dataset loaded successfully!")
+    print(iris_data.head(100))
+except Exception as e:
+    print("Error loading dataset:", e)
+
+# Dataset loaded successfully!
+#     sepal_length  sepal_width  petal_length  petal_width            class
+# 0            5.1          3.5           1.4          0.2      Iris-setosa
+# 1            4.9          3.0           1.4          0.2      Iris-setosa
+# 2            4.7          3.2           1.3          0.2      Iris-setosa
+# 3            4.6          3.1           1.5          0.2      Iris-setosa
+# 4            5.0          3.6           1.4          0.2      Iris-setosa
+# ..           ...          ...           ...          ...              ...
+# 95           5.7          3.0           4.2          1.2  Iris-versicolor
+# 96           5.7          2.9           4.2          1.3  Iris-versicolor
+# 97           6.2          2.9           4.3          1.3  Iris-versicolor
+# 98           5.1          2.5           3.0          1.1  Iris-versicolor
+# 99           5.7          2.8           4.1          1.3  Iris-versicolor
+
+# [100 rows x 5 columns]
+
+type(iris_data)
+# pandas.core.frame.DataFrame
+
+iris_data.iloc[50:100]
+
+#    sepal_length  sepal_width  petal_length  petal_width            class
+# 50          7.0          3.2           4.7          1.4  Iris-versicolor
+# 51          6.4          3.2           4.5          1.5  Iris-versicolor
+# ...
+# 99          5.7          2.8           4.1          1.3  Iris-versicolor
+
+
+sns.pairplot(iris_data, hue="class")
+plt.show()
+
+# there will be a graph that will pop up but curretly i cant upload it 
+
+iris_data.describe()
+
+#	sepal_length	sepal_width	petal_length	petal_width
+#count	150.000000	150.000000	150.000000	150.000000
+#mean	5.843333	3.054000	3.758667	1.198667
+#std	0.828066	0.433594	1.764420	0.763161
+#min	4.300000	2.000000	1.000000	0.100000
+#25%	5.100000	2.800000	1.600000	0.300000
+#50%	5.800000	3.000000	4.350000	1.300000
+#75%	6.400000	3.300000	5.100000	1.800000
+#max	7.900000	4.400000	6.900000	2.500000
+
+X = iris_data.drop("class", axis=1)
+X
+
+#	sepal_length	sepal_width	petal_length	petal_width
+#0	5.1	3.5	1.4	0.2
+#1	4.9	3.0	1.4	0.2
+#2	4.7	3.2	1.3	0.2
+#3	4.6	3.1	1.5	0.2
+34	5.0	3.6	1.4	0.2
+#...	...	...	...	...
+#145	6.7	3.0	5.2	2.3
+#146	6.3	2.5	5.0	1.9
+#147	6.5	3.0	5.2	2.0
+#148	6.2	3.4	5.4	2.3
+#149	5.9	3.0	5.1	1.8
+#150 rows × 4 columns
+
+
+y = iris_data["class"]
+y
+
+#classs
+#0	Iris-setosa
+#1	Iris-setosa
+#2	Iris-setosa
+#3	Iris-setosa
+#4	Iris-setosa
+#...	...
+#145	Iris-virginica
+#146	Iris-virginica
+#147	Iris-virginica
+#148	Iris-virginica
+#149	Iris-virginica
+#150 rows × 1 columns
+
+
+#dtype: object
